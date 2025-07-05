@@ -52,10 +52,10 @@ The goal is to build a reusable, safe, and easy-to-read linked list module.
 
 | Date       | Task                            | Status     |
 |------------|----------------------------------|------------|
-| 2025-07-05 | Created Node class               | ✅ Done     |
-| 2025-07-05 | Implemented insert functions     | ✅ Done     |
+| 2025-07-04 | Created Node class               | ✅ Done     |
+| 2025-07-04 | Added find and print methods     | ✅ Done     |
+| 2025-07-04 | Implemented insert functions     | ✅ Done     |
 | 2025-07-05 | Implemented delete functions     | ✅ Done     |
-| 2025-07-05 | Added find and print methods     | ✅ Done     |
 | TBD        | Add sorting or file I/O support  | 🔜 Planned  |
 
 ---
