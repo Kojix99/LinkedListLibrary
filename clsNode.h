@@ -1,3 +1,16 @@
+// ============================================================================
+//  Linked List Node Library
+//  Author       : Sohail Zoraibi
+//  Created On   : 07/05/2025
+//  Description  :
+//      This header file defines the Node class and provides a suite of static
+//      utility methods for working with singly linked lists, including
+//      insertion, deletion, search, and printing operations.
+// 
+//      The implementation follows principles of defensive programming,
+//      ensuring safe memory management and handling of edge cases.
+// ============================================================================
+
 #pragma once
 #include <iostream>
 
@@ -136,5 +149,71 @@ public:
 	static void InsertBefore(Node* head, string TargetName, string FirstName, string Lastname, int Grade)
 	{
 		InsertBefore(head, TargetName, new Node(FirstName, Lastname, Grade, nullptr));
+	}
+
+	static void DeleteNode(Node* &head, string TargetName)
+	{
+		Node* Current = head;
+		Node* PreviousNode = nullptr;
+
+		if (head == nullptr) return;
+
+		if (Current->FirstName == TargetName)
+		{
+			head = head->Next;
+			delete Current;
+			return;
+		}
+
+		while (Current != nullptr && Current->FirstName != TargetName)
+		{
+			PreviousNode = Current;
+			Current = Current->Next;
+		}
+
+		if (Current == nullptr) return;
+
+		if (PreviousNode != nullptr)
+		{
+			PreviousNode->Next = Current->Next;
+		}
+		delete Current;
+	}
+
+	static void DeleteFirstNode(Node*& head)
+	{
+		if (head == nullptr) return;
+
+		Node* Current = head;
+
+		head = Current->Next;
+		delete Current;
+	}
+
+	static void DeleteLastNode(Node*& head)
+	{
+		if (head == nullptr) return;
+
+		Node* Current = head;
+		if (head->Next == nullptr)
+		{
+			head = nullptr;
+			delete Current;
+			return;
+		}
+
+		Node* PreviousNode = nullptr;
+
+		while (Current->Next != nullptr)
+		{
+			PreviousNode = Current;
+			Current = Current->Next;
+		}
+
+		if (PreviousNode != nullptr)
+		{
+			PreviousNode->Next = nullptr;
+		}
+		delete Current;
 	}
 };

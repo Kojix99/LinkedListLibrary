@@ -19,5 +19,7 @@ int main(){
 	Node* NewNode = new Node("Jocker", "Sohail", 2999, nullptr);
 	Node::InsertBefore(head, "Mouad", NewNode);
 	Node::InsertAtEnd(head, new Node("Safae", "o7esso", 19, nullptr));
+
+	Node::DeleteLastNode(head);
 	Node::PrintNodes(head);
 }
